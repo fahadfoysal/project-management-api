@@ -16,7 +16,6 @@ def get_tokens_for_user(user):
     }
 
 
-# Register User
 class RegisterView(APIView):
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -26,7 +25,6 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# Login User
 class LoginView(APIView):
     def post(self, request):
         username = request.data.get('username')
@@ -39,7 +37,6 @@ class LoginView(APIView):
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
-# Get, Update, and Delete User
 class UserDetailView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
