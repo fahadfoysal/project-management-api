@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'projects', 
     'tasks', 
     'comments',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

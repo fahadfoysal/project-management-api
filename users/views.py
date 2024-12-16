@@ -6,6 +6,9 @@ from django.contrib.auth import authenticate
 from .models import CustomUser
 from .serializers import RegisterSerializer, UserSerializer
 
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
+
 
 # Generate JWT Tokens
 def get_tokens_for_user(user):
@@ -17,6 +20,8 @@ def get_tokens_for_user(user):
 
 
 class RegisterView(APIView):
+    
+    @swagger_auto_schema(operation_description="Get user by ID", responses={200: UserSerializer})
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
