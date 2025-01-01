@@ -24,6 +24,7 @@ and mobile application.
 - **Python**: 3.x
 - **Django**: 5.x
 - **DRF**: 3.x
+- **JWT**
 - **SQLite**: (default database for Django projects)
 
 
